@@ -20,9 +20,9 @@ const HeroSlide = () => {
 
     useEffect(() => {
         const getMovies = async () => {
-            const params = {page: 1}
+            const params = { page: 1 }
             try {
-                const response = await tmdbApi.getMoviesList(movieType.popular, {params});
+                const response = await tmdbApi.getMoviesList(movieType.popular, { params });
                 setMovieItems(response.results.slice(1, 4));
                 console.log(response);
             } catch {
@@ -39,7 +39,7 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                // autoplay={{delay: 3000}}
+            // autoplay={{delay: 3000}}
             >
                 {
                     movieItems.map((item, i) => (
@@ -52,7 +52,7 @@ const HeroSlide = () => {
                 }
             </Swiper>
             {
-                movieItems.map((item, i) => <TrailerModal key={i} item={item}/>)
+                movieItems.map((item, i) => <TrailerModal key={i} item={item} />)
             }
         </div>
     );
@@ -84,7 +84,7 @@ const HeroSlideItem = props => {
     return (
         <div
             className={`hero-slide__item ${props.className}`}
-            style={{backgroundImage: `url(${background})`}}
+            style={{ backgroundImage: `url(${background})` }}
         >
             <div className="hero-slide__item__content container">
                 <div className="hero-slide__item__content__info">
